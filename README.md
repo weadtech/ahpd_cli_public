@@ -45,21 +45,21 @@ The AHPd CLI requires the input data to adhere to a strict structure containing 
 
 ```json
 {
-    "data": {
-        "criteria": {
-            "price US$": "min",
-            "storage GB": "max",
-            "memory GB": "max",
-            "camera Mpx": "max",
-            "battery mAh": "max"
-        },
-        "options": {
-            "Phone A": [9494, 128, 6, 48, 4323],
-            "Phone B": [4139, 256, 8, 50, 4500],
-            "Phone C": [4429, 256, 8, 50, 4300],
-            "Phone D": [1885, 128, 6, 64, 5065]
-        }
-    }
+  "data": {
+    "criteria": {
+      "price US$": "min",
+      "storage GB": "max",
+      "memory GB": "max",
+      "camera Mpx": "max",
+      "battery mAh": "max"
+    },
+    "options": {
+      "Phone A": [9494, 128, 6, 48, 4323],
+      "Phone B": [4139, 256, 8, 50, 4500],
+      "Phone C": [4429, 256, 8, 50, 4300],
+      "Phone D": [1885, 128, 6, 64, 5065]
+    }
+  }
 }
 ```
 
@@ -82,6 +82,35 @@ The AHPd CLI requires the input data to adhere to a strict structure containing 
 # Complete example with inline JSON data
 ahpd inline -i '{"data":{"criteria":{"price US$":"min","storage GB":"max","memory GB":"max","camera Mpx":"max","battery mAh":"max"},"options":{"Phone A":[9494,128,6,48,4323],"Phone B":[4139,256,8,50,4500],"Phone C":[4429,256,8,50,4300],"Phone D":[1885,128,6,64,5065]}}}'
 ```
+
+### Example visual (with Chart.js)
+
+This simple example demonstrates the decision to purchase a device, comparing the features that the **user considers relevant**.
+
+| Option  | price US$ (min) | storage GB (max) | memory GB (max) | camera Mpx (max) | battery mAh (max) |
+|----------|-----------------|------------------|------------------|------------------|-------------------|
+| Phone A  | 9494            | 128              | 6                | 48               | 4323              |
+| Phone B  | 4139            | 256              | 8                | 50               | 4500              |
+| Phone C  | 4429            | 256              | 8                | 50               | 4300              |
+| Phone D  | 1885            | 128              | 6                | 64               | 5065              |
+
+Note that the data was passed **without** any transformation, **without** normalization, **exactly as it is in the real world**.
+
+The user only needed to indicate whether a lower "price" is better or a larger "battery" is better.
+
+The screenshot below intuitively shows the results, allowing you to see **precisely how much each feature (criterion)** contributed to the final ranking score. **This visually validates the weights calculated by AHPd**.
+
+![./docs/print-chart.png](./docs/print-chart.png)
+
+## 🧾 Practical Use Cases
+
+| Area | Application | Strategic Outcome |
+| :--- | :--- | :--- |
+| **Finance** | Comparing investments based on return, risk, and liquidity. | Optimized portfolio construction and risk alignment. |
+| **IT & Engineering** | Selecting vendors, software architectures, or technologies. | Reduced deployment costs and increased system efficiency. |
+| **Operations** | Choosing optimal equipment, routes, or maintenance strategies. | Streamlined efficiency and reduced operational overhead. |
+| **Product & Marketing** | Prioritizing features, analyzing competitor products, or setting prices. | Data-driven product roadmaps and competitive advantage. |
+| **HR & Procurement** | Evaluating candidate suitability or selecting raw material suppliers. | Consistent, measurable selection criteria. |
 
 ## 📤 Output Formatting and Control
 
@@ -106,6 +135,65 @@ ahpd json -f phones.json --level rank contribution-global contribution-detailed
 # Use combined or abbreviated forms
 ahpd json -f phones.json --level r global
 ahpd json -f phones.json --level rgd
+```
+
+**Output example:*
+```json
+{
+  "contribution": {
+    "alternatives_contribution": {
+      "by_criteria": {
+        "Phone A": {
+          "battery mAh": 25.27140468399798,
+          "camera Mpx": 24.073235745226988,
+          "memory GB": 22.7835981160184,
+          "price US$": 10.151185142297878,
+          "storage GB": 17.720576312458753
+        },
+        "Phone B": {
+          "battery mAh": 18.725026772638852,
+          "camera Mpx": 17.849621957062656,
+          "memory GB": 21.623542027984474,
+          "price US$": 16.57434354299879,
+          "storage GB": 25.227465699315214
+        },
+        "Phone C": {
+          "battery mAh": 18.24259984226682,
+          "camera Mpx": 18.198574261252137,
+          "memory GB": 22.046272819345443,
+          "price US$": 15.791901454565918,
+          "storage GB": 25.720651622569683
+        },
+        "Phone D": {
+          "battery mAh": 19.309583049401244,
+          "camera Mpx": 20.932567729107106,
+          "memory GB": 14.85838512914299,
+          "price US$": 33.34294232523744,
+          "storage GB": 11.556521767111215
+        }
+      },
+      "total_percentage": {
+        "Phone A": 18.810524412740325,
+        "Phone B": 26.42622428319317,
+        "Phone C": 25.91950921187671,
+        "Phone D": 28.843742092189796
+      }
+    },
+    "criteria_weights": {
+      "battery mAh": 0.05517554629857757,
+      "camera Mpx": 0.09811746760930982,
+      "memory GB": 0.11601983189243667,
+      "price US$": 0.4599742131173236,
+      "storage GB": 0.27071294108235233
+    }
+  },
+  "rank": {
+    "Phone A": 0.14922568130663832,
+    "Phone B": 0.260912125126531,
+    "Phone C": 0.25370960371891654,
+    "Phone D": 0.336152589847914
+  }
+}
 ```
 
 #### Output Destination (`--output`) 💾
