@@ -1,0 +1,55 @@
+{
+  "contribution": {
+    "alternatives_contribution": {
+      "by_criteria": {
+        "Phone A": {
+          "battery mAh": 25.27140468399798,
+          "camera Mpx": 24.073235745226988,
+          "memory GB": 22.7835981160184,
+          "price US$": 10.151185142297878,
+          "storage GB": 17.720576312458753
+        },
+        "Phone B": {
+          "battery mAh": 18.725026772638852,
+          "camera Mpx": 17.849621957062656,
+          "memory GB": 21.623542027984474,
+          "price US$": 16.57434354299879,
+          "storage GB": 25.227465699315214
+        },
+        "Phone C": {
+          "battery mAh": 18.24259984226682,
+          "camera Mpx": 18.198574261252137,
+          "memory GB": 22.046272819345443,
+          "price US$": 15.791901454565918,
+          "storage GB": 25.720651622569683
+        },
+        "Phone D": {
+          "battery mAh": 19.309583049401244,
+          "camera Mpx": 20.932567729107106,
+          "memory GB": 14.85838512914299,
+          "price US$": 33.34294232523744,
+          "storage GB": 11.556521767111215
+        }
+      },
+      "total_percentage": {
+        "Phone A": 18.810524412740325,
+        "Phone B": 26.42622428319317,
+        "Phone C": 25.91950921187671,
+        "Phone D": 28.843742092189796
+      }
+    },
+    "criteria_weights": {
+      "battery mAh": 0.05517554629857757,
+      "camera Mpx": 0.09811746760930982,
+      "memory GB": 0.11601983189243667,
+      "price US$": 0.4599742131173236,
+      "storage GB": 0.27071294108235233
+    }
+  },
+  "rank": {
+    "Phone A": 0.14922568130663832,
+    "Phone B": 0.260912125126531,
+    "Phone C": 0.25370960371891654,
+    "Phone D": 0.336152589847914
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "data": {
+        "criteria": {
+            "price US$": "min",
+            "storage GB": "max",
+            "memory GB": "max",
+            "camera Mpx": "max",
+            "battery mAh": "max"
+        },
+        "options": {
+            "Phone A": [9494,128,6,48,4323],
+            "Phone B": [4139,256,8,50,4500],
+            "Phone C": [4429,256,8,50,4300],
+            "Phone D": [1885,128,6,64,5065]
+        }
+    }
+}
