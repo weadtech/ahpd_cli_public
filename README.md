@@ -4,7 +4,9 @@
 ![Linkage](https://img.shields.io/badge/Linkage-Static-brightgreen)
 ![Architecture](https://img.shields.io/badge/Architecture-x86_64-blue)
 ![Minimum Kernel](https://img.shields.io/badge/Kernel-%3E=3.10-brightgreen)
-![Usage Rights](https://img.shields.io/badge/%E2%9A%94%EF%B8%8F-Free%20for%20Personal%20%26%20Commercial-brightgreen)
+![Usage Rights](https://img.shields.io/badge/Usage-Free%20for%20Personal%20%26%20Commercial-brightgreen)
+![Status](https://img.shields.io/badge/Status-Stable-brightgreen)
+![AHPd Core](https://img.shields.io/badge/AHPd%20Core-0.1.2-purple)
 
 The **AHPd Command Line Interface (CLI)** provides a high-performance, platform-agnostic way to integrate the **AHPd** (Analytic Hierarchy Process Data-Driven) decision engine into automated pipelines, scripts, and real-time data processing workflows.
 
