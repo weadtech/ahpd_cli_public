@@ -1,5 +1,11 @@
 # AHPd CLI — Data-Driven Multi-Criteria Decision System 💡
 
+![Linux Portability](https://img.shields.io/badge/Linux-Portable-brightgreen)
+![Linkage](https://img.shields.io/badge/Linkage-Static-brightgreen)
+![Architecture](https://img.shields.io/badge/Architecture-x86_64-blue)
+![Minimum Kernel](https://img.shields.io/badge/Kernel-%3E=3.10-brightgreen)
+![Usage Rights](https://img.shields.io/badge/%E2%9A%94%EF%B8%8F-Free%20for%20Personal%20%26%20Commercial-brightgreen)
+
 The **AHPd Command Line Interface (CLI)** provides a high-performance, platform-agnostic way to integrate the **AHPd** (Analytic Hierarchy Process Data-Driven) decision engine into automated pipelines, scripts, and real-time data processing workflows.
 
 Built on an optimized core, the CLI ensures **100% objective, consistent, and auditable** multi-criteria decision-making based purely on statistical data analysis.
